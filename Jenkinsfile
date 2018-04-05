@@ -40,7 +40,7 @@ node {
    
    stage('Test Groovy call') {
       echo 'MY TRY AT CALLING GROOVY'
-      act.handle_success(cfg)
+      act.handle_success('JJJJ')
    }   
    
    
