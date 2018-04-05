@@ -4,4 +4,10 @@ def handle_success(def cfg) {
 
 } 
 
+def test_call(def cfg) {
+
+    echo "In test_call of actions groovy"
+
+}
+
 return this;
