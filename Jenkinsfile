@@ -11,6 +11,7 @@ node {
    def mvnHome
    
    def act = load "jenkins/actions.groovy"
+   def cfg = load "jenkins/config.groovy"
    
    stage('Preparation M3') { // for display purposes
       echo 'Setup Maven from Global tools'
@@ -39,7 +40,7 @@ node {
    
    stage('Test Groovy call') {
       echo 'MY TRY AT CALLING GROOVY'
-      act.handle_success()
+      act.handle_success(cfg)
    }   
    
    
