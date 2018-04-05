@@ -1,4 +1,13 @@
 node {
+
+   stage('JJ Checkout SCM') {
+       echo 'Test checkout scm verb'
+       checkout scm
+       echo 'Done Test checkout scm verb'   
+   }
+
+
+
    def mvnHome
    
    def act = load "../actions.groovy"
