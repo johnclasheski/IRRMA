@@ -1,6 +1,6 @@
-def handle_successJJJ(msgtosend) {
+def internalFunction_sendMessage(msgtosend) {
 
-    echo "In handle successJJJ"
+    echo "JJ DEBUG - In internalFunction_sendMessage"
     echo msgtosend
 
 }
@@ -9,17 +9,16 @@ def handle_successJJJ(msgtosend) {
 node {
 
    stage('JJ Checkout SCM') {
-       echo 'Test checkout scm verb'
+       internalFunction_sendMessage('Begin checkout scm')
        checkout scm
-       echo 'Done Test checkout scm verb'  
-       handle_successJJJ('HAHAHAHAH')
+       internalFunction_sendMessage('Done checkout scm')
    }
 
 
 
    def mvnHome
    
-   def act = load "jenkins/actions.groovy"
+   def extFunction = load "jenkins/actions.groovy"
    def cfg = load "jenkins/config.groovy"
    
    stage('Preparation M3') { // for display purposes
@@ -48,8 +47,11 @@ node {
    } 
    
    stage('Test Groovy call') {
-      echo 'MY TRY AT CALLING GROOVY'
-      act.handle_success('JJJJ')
+      internalFunction_sendMessage('MY TRY AT CALLING GROOVY 1')
+      extFunction.handle_success('JJJJ')
+      internalFunction_sendMessage('MY TRY AT CALLING GROOVY 2')
+      extFunction.test_call(cfg)
+
    }   
    
    
