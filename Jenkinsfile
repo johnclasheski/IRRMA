@@ -10,7 +10,7 @@ node {
 
    def mvnHome
    
-   def act = load "../actions.groovy"
+   def act = load "jenkins/actions.groovy"
    
    stage('Preparation M3') { // for display purposes
       echo 'Setup Maven from Global tools'
