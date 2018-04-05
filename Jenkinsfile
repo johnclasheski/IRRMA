@@ -35,7 +35,15 @@ node {
           // bat (/"ant" -buildfile C:\Tools\CMSDownloads\IRRMAOnline\IRRMA_APP_DEV\IRRMA_APP_DEV\IRRMA_APP\source\build.xml release/)
           bat (/"ant" -buildfile source\build.xml release/)
       }
-   }      
+   } 
+   
+   stage('Test Groovy call') {
+      echo 'MY TRY AT CALLING GROOVY'
+      act.handle_success()
+   }   
+   
+   
+   
    stage('Identify M3') {
       // Run the maven build
       if (isUnix()) {
