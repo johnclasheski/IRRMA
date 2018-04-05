@@ -1,5 +1,8 @@
 node {
    def mvnHome
+   
+   def act = load "actions.groovy"
+   
    stage('Preparation M3') { // for display purposes
       echo 'Setup Maven from Global tools'
       // Get the Maven tool.
