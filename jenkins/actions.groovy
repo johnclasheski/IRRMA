@@ -10,4 +10,13 @@ def test_call(def cfg) {
 
 }
 
+def ansible_deploy(def cfg) {
+
+   stage('ansible_deploy') {
+      echo 'MY TRY AT ansible_deploy'
+   }
+
+}
+
+
 return this;
