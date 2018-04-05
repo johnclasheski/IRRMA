@@ -1,9 +1,18 @@
+def handle_successJJJ(msgtosend) {
+
+    echo "In handle successJJJ"
+    echo msgtosend
+
+}
+
+
 node {
 
    stage('JJ Checkout SCM') {
        echo 'Test checkout scm verb'
        checkout scm
-       echo 'Done Test checkout scm verb'   
+       echo 'Done Test checkout scm verb'  
+       handle_successJJJ('HAHAHAHAH')
    }
 
 
