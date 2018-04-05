@@ -52,28 +52,35 @@ node {
       internalFunction_sendMessage('MY TRY AT CALLING GROOVY 2')
       extFunction.test_call(cfg)
 
+      internalFunction_sendMessage('START Test Ansible Deploy')
+      extFunction.ansible_deploy(cfg)
+      internalFunction_sendMessage('END Test Ansible Deploy')
    }   
    
    
-   
-   stage('Identify M3') {
-      // Run the maven build
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-      } else {
-	 bat(/"${mvnHome}\bin\mvn" -version/)
-      }
-   }
-   stage('Build with M3') {
-      // Run the maven build
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-      } else {
-	 bat(/"${mvnHome}\bin\mvn" -e -f C:\Apps\CLOUD\git\spring-cloud-microservice-example\pom.xml -Dmaven.test.failure.ignore clean compile/)
-      }
-   }
+//these two stages are good   
+//   stage('Identify M3') {
+//      // Run the maven build
+//      if (isUnix()) {
+//         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+//      } else {
+//	 bat(/"${mvnHome}\bin\mvn" -version/)
+//      }
+//   }
+//   stage('Build with M3') {
+//      // Run the maven build
+//      if (isUnix()) {
+//         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+//      } else {
+//	 bat(/"${mvnHome}\bin\mvn" -e -f C:\Apps\CLOUD\git\spring-cloud-microservice-example\pom.xml -Dmaven.test.failure.ignore clean compile/)
+//      }
+//   }
+
+
+//i never tested this below stage
 //   stage('Results') {
 //      junit '**/target/surefire-reports/TEST-*.xml'
 //      archive 'target/*.jar'
 //   }
+
 }
